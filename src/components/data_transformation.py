@@ -1,3 +1,14 @@
+import os
+import pandas as pd
+import numpy as np
+import pickle
+from dataclasses import dataclass
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from src.utils.logging import get_logger
+
 @dataclass
 class DataTransformationConfig:
 preprocessor_obj_file_path: str = os.path.join("artifacts", "preprocessor.pkl")
